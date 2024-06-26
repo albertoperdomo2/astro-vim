@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Help">
+  <div class="flex flex-col items-center justify-center h-full">
+    <h1 class="text-4xl font-bold mb-8 text-nvim-blue">Help page</h1>
+    <div class="text-center">
+      <p class="mb-4">version 0.0.1</p>
+      <div class="flex flex-col text-left justify-left p-10">
+        <p class="p-4">
+            This page contains basic instructions to use this page. Some Vim key bindings are enabled and can be used within the 
+            page itself, but some of them don't work in all the pages since I did not considered it necessary.
+        </p>
+
+        <h2 class="p-4 text-2xl font-bold text-nvim-blue">Instructions</h2>
+        <p class="ml-4"><a class="font-bold">u</a>: Undo the last change, in this case, it navigates up one level.</p>
+        <p class="ml-4"><a class="font-bold">j</a>: Move the cursor down one line.</p>
+        <p class="ml-4"><a class="font-bold">k</a>: Move the cursor up one line.</p>
+        <p class="ml-4"><a class="font-bold">gg</a>: Move the cursor to the first line of the file, in this case, page.</p>
+        <p class="ml-4"><a class="font-bold">G</a>: Move the cursor to the last line of the file, in this case, page.</p>
+        <p class="ml-4"><a class="font-bold">:&lt;command&gt;</a>: Executes a command.</p>
+      </div>
+    </div>
+  </div>
+</Layout>

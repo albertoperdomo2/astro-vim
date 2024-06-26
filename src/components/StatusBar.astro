@@ -1,0 +1,24 @@
+<div id="status-bar" class="bg-nvim-statusline text-nvim-fg h-6 px-2 flex items-center justify-between text-sm">
+  <div id="mode" class="w-20">NORMAL</div>
+  <div id="command-line" class="flex-1 ml-2"></div>
+  <div id="file-info">Landing Page</div>
+  <div id="position">1:1</div>
+</div>
+
+<script>
+  const statusBar = {
+    mode: document.getElementById('mode'),
+    commandLine: document.getElementById('command-line'),
+    fileInfo: document.getElementById('file-info'),
+    position: document.getElementById('position'),
+  };
+
+  function updateStatusBar(mode, commandLine, fileInfo, position) {
+    if (mode !== undefined) statusBar.mode.textContent = mode;
+    if (commandLine !== undefined) statusBar.commandLine.textContent = commandLine;
+    if (fileInfo !== undefined) statusBar.fileInfo.textContent = fileInfo;
+    if (position !== undefined) statusBar.position.textContent = position;
+  }
+
+  window.updateStatusBar = updateStatusBar;
+</script>

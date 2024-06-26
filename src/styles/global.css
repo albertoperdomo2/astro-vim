@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-nvim-bg text-nvim-fg font-mono;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-nvim-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-nvim-gray rounded;
+}

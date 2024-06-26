@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog');
+blogPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Blog">
+  <ul id="blog-list">
+    {blogPosts.map((post, index) => (
+      <li class="mb-8 grid grid-cols-[2fr_3fr_1fr] gap-4 items-start blog-item" data-index={index} data-href={`/blog/${post.slug}`}>
+        <a href={`/blog/${post.slug}`} class="text-nvim-blue hover:underline font-semibold">
+          {post.data.title}
+        </a>
+        <p class="text-gray-600 line-clamp-3">
+          {post.data.summary}
+        </p>
+        <time datetime={post.data.date.toISOString()} class="text-gray-500">
+          {post.data.date.toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric'})}
+        </time>
+      </li>
+    ))}
+  </ul>
+</Layout>
+
+<style>
+  .blog-item.active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script>
+  let currentIndex = 0;
+  const blogItems = document.querySelectorAll('.blog-item');
+  
+  function updateActiveBlogItem() {
+    blogItems.forEach((item, index) => {
+      if (index === currentIndex) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
+
+  function moveCursor(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = blogItems.length - 1;
+    if (currentIndex >= blogItems.length) currentIndex = 0;
+    updateActiveBlogItem();
+  }
+
+  function enterBlogPost() {
+    const activeItem = document.querySelector('.blog-item.active');
+    if (activeItem) {
+      window.location.href = activeItem.getAttribute('data-href');
+    }
+  }
+
+  document.addEventListener('keydown', (e) => {
+    switch(e.key) {
+      case 'j':
+        moveCursor(1);
+        break;
+      case 'k':
+        moveCursor(-1);
+        break;
+      case 'Enter':
+        enterBlogPost();
+        break;
+    }
+  });
+
+  // Initialize the first item as active
+  updateActiveBlogItem();
+</script>

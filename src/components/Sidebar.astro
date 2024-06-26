@@ -1,0 +1,21 @@
+---
+// const pathname = Astro.url.pathname;
+// const isTildePage = pathname === '/' || pathname.split('/').filter(Boolean).length === 1;
+const isTildePage = true;
+---
+
+<div class="bg-nvim-bg text-nvim-gray w-6 flex-shrink-0 text-right pr-2">
+  {isTildePage ? (
+    <div class="h-full">
+      {Array(100).fill('~').map((line, index) => (
+        <div key={index}>{line}</div>
+      ))}
+    </div>
+  ) : (
+    <div class="h-full">
+      {Array(100).fill(0).map((_, index) => (
+        <div key={index}>{index + 1}</div>
+      ))}
+    </div>
+  )}
+</div>
