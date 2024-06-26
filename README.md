@@ -2,6 +2,8 @@
 
 Welcome to the astro-vim-landing page template! This project combines the power of Astro with the efficiency of Vim key bindings to create a unique and fast navigation experience. 
 
+<img src="public/astro-vim.png" alt="logo" width="100" style="display: block; margin: 0 auto"/>
+
 ## Table of Contents
 
 - [Installation](#installation)
