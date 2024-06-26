@@ -18,14 +18,14 @@ function performSearch(query: string) {
   );
   
   const searchResults = document.getElementById('search-results');
-  searchResults.innerHTML = results.map(post => `
+  searchResults!.innerHTML = results.map(post => `
     <a href="${post.path}" class="block p-2 hover:bg-nvim-gray">
       <h3 class="font-bold">${post.title}</h3>
       <p class="text-sm">${post.content.substring(0, 100)}...</p>
     </a>
   `).join('');
   
-  searchResults.classList.remove('hidden');
+  searchResults!.classList.remove('hidden');
 }
 
 document.addEventListener('DOMContentLoaded', () => {

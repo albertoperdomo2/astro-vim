@@ -13,11 +13,11 @@
     position: document.getElementById('position'),
   };
 
-  function updateStatusBar(mode, commandLine, fileInfo, position) {
-    if (mode !== undefined) statusBar.mode.textContent = mode;
-    if (commandLine !== undefined) statusBar.commandLine.textContent = commandLine;
-    if (fileInfo !== undefined) statusBar.fileInfo.textContent = fileInfo;
-    if (position !== undefined) statusBar.position.textContent = position;
+  function updateStatusBar(mode: any, commandLine: any, fileInfo: any, position: any) {
+    if (mode !== undefined) statusBar.mode!.textContent = mode;
+    if (commandLine !== undefined) statusBar.commandLine!.textContent = commandLine;
+    if (fileInfo !== undefined) statusBar.fileInfo!.textContent = fileInfo;
+    if (position !== undefined) statusBar.position!.textContent = position;
   }
 
   window.updateStatusBar = updateStatusBar;

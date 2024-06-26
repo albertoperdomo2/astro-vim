@@ -20,12 +20,12 @@
         result.toLowerCase().includes(query)
       );
 
-      searchResults.innerHTML = results
+      searchResults!.innerHTML = results
         .map(result => `<div class="p-2 hover:bg-gray-700">${result}</div>`)
         .join('');
-      searchResults.classList.remove('hidden');
+      searchResults!.classList.remove('hidden');
     } else {
-      searchResults.classList.add('hidden');
+      searchResults!.classList.add('hidden');
     }
   });
 </script>

@@ -44,7 +44,7 @@ blogPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
     });
   }
 
-  function moveCursor(direction) {
+  function moveCursor(direction: any) {
     currentIndex += direction;
     if (currentIndex < 0) currentIndex = blogItems.length - 1;
     if (currentIndex >= blogItems.length) currentIndex = 0;
@@ -54,7 +54,7 @@ blogPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   function enterBlogPost() {
     const activeItem = document.querySelector('.blog-item.active');
     if (activeItem) {
-      window.location.href = activeItem.getAttribute('data-href');
+      window.location.href = activeItem.getAttribute('data-href') ?? "";
     }
   }
 
