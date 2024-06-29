@@ -1,5 +1,8 @@
 # astro-vim-landing
 
+> [!NOTE]
+> **DISCLAIMER**: Status bar rendering is not working but commands work! 
+
 Welcome to the astro-vim-landing page template! This project combines the power of Astro with the efficiency of Vim key bindings to create a unique and fast navigation experience. 
 
 <p align="center">
