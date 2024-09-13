@@ -1,9 +1,9 @@
-# astro-vim-landing
+# astro-vim
 
 > [!NOTE]
 > **DISCLAIMER**: Status bar rendering is not working but commands work! 
 
-Welcome to the astro-vim-landing page template! This project combines the power of Astro with the efficiency of Vim key bindings to create a unique and fast navigation experience. 
+Welcome to the astro-vim page template! This project combines the power of Astro with the efficiency of Vim key bindings to create a unique and fast navigation experience. 
 
 <p align="center">
     <img src="public/astro-vim.png" alt="logo" width="100"/>
@@ -24,8 +24,8 @@ Welcome to the astro-vim-landing page template! This project combines the power 
 To get started with this project, you need to have Node.js installed. You can then clone this repository and install the necessary dependencies:
 
 ```sh
-git clone https://github.com/albertoperdomo2/astro-vim-landing.git
-cd vim-astro-landing-page
+git clone https://github.com/albertoperdomo2/astro-vim.git
+cd astro-vim 
 npm install
 ```
 
