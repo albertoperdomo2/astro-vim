@@ -14,11 +14,16 @@
       position: document.getElementById('position'),
     };
 
-    function updateStatusBar(mode, commandLine, fileInfo, position) {
-      if (mode !== undefined) statusBar.mode.textContent = mode;
-      if (commandLine !== undefined) statusBar.commandLine.textContent = commandLine;
-      if (fileInfo !== undefined) statusBar.fileInfo.textContent = fileInfo;
-      if (position !== undefined) statusBar.position.textContent = position;
+    function updateStatusBar(
+      mode: string | undefined,
+      commandLine: string | undefined,
+      fileInfo: string | undefined,
+      position: string | undefined
+    ) {
+      if (mode !== undefined) statusBar.mode!.textContent = mode;
+      if (commandLine !== undefined) statusBar.commandLine!.textContent = commandLine;
+      if (fileInfo !== undefined) statusBar.fileInfo!.textContent = fileInfo;
+      if (position !== undefined) statusBar.position!.textContent = position;
     }
 
     // Expose updateStatusBar to the global scope
