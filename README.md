@@ -9,6 +9,8 @@ Welcome to the astro-vim page template! This project combines the power of Astro
     <img src="public/astro-vim.png" alt="logo" width="100"/>
 </p>
 
+![](.assets/demo.gif)
+
 ## Table of Contents
 
 - [Installation](#installation)
