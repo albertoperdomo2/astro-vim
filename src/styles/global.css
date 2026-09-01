@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-nvim-bg: #1c1c1c;
+  --color-nvim-fg: #d0d0d0;
+  --color-nvim-gray: #4e4e4e;
+  --color-nvim-blue: #5fafd7;
+  --color-nvim-green: #87d787;
+  --color-nvim-statusline: #303030;
+}
 
 body {
   @apply bg-nvim-bg text-nvim-fg font-mono;

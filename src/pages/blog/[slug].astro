@@ -1,16 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 const { slug } = Astro.params;
 const blogEntries = await getCollection('blog');
-const entry = blogEntries.find((post) => post.slug === slug);
+const entry = blogEntries.find((post) => post.id === slug);
 
 if (!entry) {
   return Astro.redirect('/404');
 }
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>

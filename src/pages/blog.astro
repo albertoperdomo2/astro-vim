@@ -9,8 +9,8 @@ blogPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 <Layout title="Blog">
   <ul id="blog-list">
     {blogPosts.map((post, index) => (
-      <li class="mb-8 grid grid-cols-[2fr_3fr_1fr] gap-4 items-start blog-item" data-index={index} data-href={`/blog/${post.slug}`}>
-        <a href={`/blog/${post.slug}`} class="text-nvim-blue hover:underline font-semibold">
+      <li class="mb-8 grid grid-cols-[2fr_3fr_1fr] gap-4 items-start blog-item" data-index={index} data-href={`/blog/${post.id}`}>
+        <a href={`/blog/${post.id}`} class="text-nvim-blue hover:underline font-semibold">
           {post.data.title}
         </a>
         <p class="text-gray-600 line-clamp-3">
@@ -25,12 +25,14 @@ blogPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 </Layout>
 
 <style>
+  @reference "../styles/global.css";
+
   .blog-item {
     @apply rounded p-2 transition-all duration-200 ease-in-out cursor-pointer;
   }
 
   .blog-item.active {
-    @apply bg-nvim-blue bg-opacity-20 border-l-4 border-nvim-blue pl-3;
+    @apply bg-nvim-blue/20 border-l-4 border-nvim-blue pl-3;
   }
 
   /* Vim-style cursor indicator */
